@@ -6,7 +6,7 @@ function Header() {
   const { t, i18n } = useTranslation();
   
   return (
-    <header>
+    <div className="header">
       <h1>Advanced Web App</h1>
       <nav>
         <Link to="/">{t('home')}</Link>
@@ -14,7 +14,7 @@ function Header() {
         <button id="fi" onClick={() => i18n.changeLanguage('fi')}>FI</button>
         <button id="en" onClick={() => i18n.changeLanguage('en')}>EN</button>
       </nav>
-    </header>
+    </div>
   );
 };
 
