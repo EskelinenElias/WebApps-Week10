@@ -1,16 +1,22 @@
 import { useState, useEffect } from "react"; 
 
+interface Post {
+  id: number;
+  title: string;
+  body: string;
+}
+
 function About() {
   
   // State for storing data
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Post[]>([]);
 
   // Function for fetching data
   useEffect(() => {
     const address = 'https://jsonplaceholder.typicode.com/posts'
     fetch(address)
       .then(response => response.json())
-      .then(data => setData(data));
+      .then((data: Post[]) => setData(data));
   }, []);
 
   // Component
